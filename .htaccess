@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /6simiab/
+    RewriteBase /apotek/
 
     # Redirect semua folder internal ke index.php
     # RewriteRule ^(app|controllers|core|views|public|src|base)(/.*)?$ index.php [L]

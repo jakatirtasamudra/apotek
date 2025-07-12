@@ -1,7 +1,7 @@
 <?php
 
     // identifikasi set base url
-    define('BASE_URL', 'http://localhost/6simiab/');
+    define('BASE_URL', 'http://localhost/apotek/');
 
     // cek kondisi function digunakan
     if ( !function_exists('__Base_Url') ) {
@@ -14,7 +14,7 @@
 
     if ( !function_exists('__Path') ) {
         function __Path() {
-            return '/6simiab';
+            return '/apotek';
         }
     }
 

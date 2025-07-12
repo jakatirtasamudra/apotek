@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2025 at 03:29 AM
+-- Generation Time: Jul 12, 2025 at 03:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -41,7 +41,30 @@ CREATE TABLE `tbl_diskon` (
 INSERT INTO `tbl_diskon` (`id_diskon`, `keterangan`, `nominal`, `tgl`) VALUES
 (1, 'nama keterangan', 10000, '2025-05-21'),
 (2, 'nama keterangan', 10000, '2025-05-21'),
-(3, 'test', 500, '2025-05-24');
+(3, 'ubah data haloo', 500, '2025-05-24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kas`
+--
+
+CREATE TABLE `tbl_kas` (
+  `id_kas` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `nominal` int(11) NOT NULL,
+  `debet` int(11) NOT NULL,
+  `kredit` int(11) NOT NULL,
+  `tgl` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_kas`
+--
+
+INSERT INTO `tbl_kas` (`id_kas`, `keterangan`, `nominal`, `debet`, `kredit`, `tgl`) VALUES
+(9, 'uang kuliah', 1500000, 0, 1500000, '2025-06-04'),
+(10, 'uang jajan', 100000, 0, 100000, '2025-06-06');
 
 -- --------------------------------------------------------
 
@@ -152,7 +175,8 @@ INSERT INTO `tbl_pembeli` (`id_pembeli`, `hp`, `nama`, `create_at`, `update_at`)
 (5, '0823123', 'SMIMAB', '2025-05-03 07:22:22', NULL),
 (6, '900918203', 'asdasdas', '2025-05-07 01:55:15', NULL),
 (7, '123123', 'asd', '2025-05-10 10:07:12', NULL),
-(8, '08909123', '6SIC2', '2025-05-10 10:19:22', NULL);
+(8, '08909123', '6SIC2', '2025-05-10 10:19:22', NULL),
+(9, '0812312321', '6SIC2', '2025-05-24 10:40:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -203,7 +227,9 @@ INSERT INTO `tbl_transaksi` (`id_transaksi`, `hp`, `nama`, `id_obat`, `jumlah`, 
 (37, '123123', 'asd', '7', 1, 10000, '2025-05-10 10:07:14', '1', '2025-05-10 17:07:17', '2025-05-10 10:07:14', NULL),
 (38, '123123', 'asd', '6', 1, 54000, '2025-05-10 10:07:15', '1', '2025-05-10 17:07:17', '2025-05-10 10:07:15', NULL),
 (39, '08909123', '6SIC2', '7', 1, 10000, '2025-05-10 10:20:00', '1', '2025-05-10 17:20:36', '2025-05-10 10:20:00', NULL),
-(40, '08909123', '6SIC2', '6', 1, 54000, '2025-05-10 10:20:00', '1', '2025-05-10 17:20:36', '2025-05-10 10:20:00', NULL);
+(40, '08909123', '6SIC2', '6', 1, 54000, '2025-05-10 10:20:00', '1', '2025-05-10 17:20:36', '2025-05-10 10:20:00', NULL),
+(42, '0812312321', '6SIC2', '8', 1, 2500, '2025-05-24 10:40:15', '1', '2025-05-24 17:40:36', '2025-05-24 10:40:15', NULL),
+(43, '0812312321', '6SIC2', '7', 3, 10000, '2025-05-24 10:40:20', '1', '2025-05-24 17:40:36', '2025-05-24 10:40:20', '2025-05-24 17:40:26');
 
 --
 -- Indexes for dumped tables
@@ -214,6 +240,12 @@ INSERT INTO `tbl_transaksi` (`id_transaksi`, `hp`, `nama`, `id_obat`, `jumlah`, 
 --
 ALTER TABLE `tbl_diskon`
   ADD PRIMARY KEY (`id_diskon`);
+
+--
+-- Indexes for table `tbl_kas`
+--
+ALTER TABLE `tbl_kas`
+  ADD PRIMARY KEY (`id_kas`);
 
 --
 -- Indexes for table `tbl_kategori`
@@ -253,7 +285,13 @@ ALTER TABLE `tbl_transaksi`
 -- AUTO_INCREMENT for table `tbl_diskon`
 --
 ALTER TABLE `tbl_diskon`
-  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_kas`
+--
+ALTER TABLE `tbl_kas`
+  MODIFY `id_kas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
@@ -277,13 +315,13 @@ ALTER TABLE `tbl_obat`
 -- AUTO_INCREMENT for table `tbl_pembeli`
 --
 ALTER TABLE `tbl_pembeli`
-  MODIFY `id_pembeli` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pembeli` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_transaksi`
 --
 ALTER TABLE `tbl_transaksi`
-  MODIFY `id_transaksi` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_transaksi` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

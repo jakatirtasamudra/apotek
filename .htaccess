@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /6simiab/
+
+    # Redirect semua folder internal ke index.php
+    # RewriteRule ^(app|controllers|core|views|public|src|base)(/.*)?$ index.php [L]
+
+    # Jika bukan file atau folder nyata, juga redirect ke index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
